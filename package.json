@@ -1,0 +1,24 @@
+{
+  "name": "friend_finder",
+  "version": "1.0.0",
+  "description": "Node.js app that matches you with a friend based on compatibility ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattwhite8/friend_finder.git"
+  },
+  "author": "Matt White",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattwhite8/friend_finder/issues"
+  },
+  "homepage": "https://github.com/mattwhite8/friend_finder#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
