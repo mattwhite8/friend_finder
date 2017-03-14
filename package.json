@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mattwhite8/friend_finder#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "jsonfile": "^2.4.0"
   }
 }
