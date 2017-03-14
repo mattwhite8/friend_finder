@@ -1,7 +1,6 @@
 // Dependencies
 var friends = require('../data/friends.js');
-// var jsonfile = require('jsonfile');
-// var file = '../data/friends.json';
+
 
 function stringToNum(newFriend) {
 	newFriend.scores.forEach(function(element, index, array) {
@@ -43,18 +42,16 @@ function compareScores(newFriend, friends) {
 module.exports = function(app){
 	app.get('/api/friends', function(req, res) {
 		res.json(friends);
-		// jsonfile.readFile(file, function(err, obj) {
-		// 	if (err) throw err;
-		//   	res.json(obj);
-		// });
 	});
 
 	app.post('/api/friends', function(req, res) {
 		var newFriend = req.body;
-		stringToNum(newFriend);
-		friends.push(newFriend);
+		var toNum = stringToNum(newFriend);
 
-		var response = compareScores(newFriend, friends);
+		friends.push(toNum);
+		console.log(friends);
+
+		var response = compareScores(toNum, friends);
 		res.json(response);
 	});
 };

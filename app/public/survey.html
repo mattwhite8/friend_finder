@@ -9,12 +9,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
 		<form>
 
 			<h3><strong>About You</strong></h3>
+			<h4>1 = Strongly Disagree, 5 = Strongly Agree</h4>
 			<h4>Name (Required)</h4>
 			<input type="text" name="" id="name" class="form-control" required >
 
@@ -23,7 +26,7 @@
 
 			<div class="form-group">
 				<label>Q1</label>
-				<p>test</p>
+				<p>I make friends easily.</p>
 				<select class="form-control" id='1'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -34,8 +37,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q2</label>
+				<p>I get angry easily.</p>
 				<select class="form-control" id='2'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -46,8 +49,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q3</label>
+				<p>I experience my emotions intensely.</p>
 				<select class="form-control" id='3'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -58,8 +61,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q4</label>
+				<p>I love excitement.</p>
 				<select class="form-control" id='4'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -70,8 +73,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q5</label>
+				<p>I like to solve complex problems.</p>
 				<select class="form-control" id='5'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -82,8 +85,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q6</label>
+				<p>I trust others.</p>
 				<select class="form-control" id='6'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -94,8 +97,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q7</label>
+				<p>I would never cheat on my taxes.</p>
 				<select class="form-control" id='7'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -106,8 +109,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q8</label>
+				<p>I complete tasks successfully.</p>
 				<select class="form-control" id='8'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -118,8 +121,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q9</label>
+				<p>I fear for the worst.</p>
 				<select class="form-control" id='9'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -130,8 +133,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="q2">Q2</label>
-				<p>test</p>
+				<label>Q10</label>
+				<p>I like music.</p>
 				<select class="form-control" id='10'>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -144,6 +147,7 @@
 		  <button type="submit" class="btn btn-default" id="form-submit">Submit</button>
 		</form>
 
+		<a href="/api/friends">API</a> | <a href="https://github.com/mattwhite8/friend_finder">GitHub Repo</a>
 		<!-- Modal -->
 		<div id="resultsModal" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
