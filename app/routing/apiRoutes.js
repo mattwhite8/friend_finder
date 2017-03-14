@@ -10,14 +10,17 @@ function stringToNum(newFriend) {
 };
 
 function compareScores(newFriend, friends) { 
+	var friendsCopy = [];
+	Object.assign(friendsCopy, friends);
 	var score = 100;
   	var tempScore = 0;
 	var match = {};
   	var tempMatch = {};
-  
-	var friendsTruncated = friends.splice(0, friends.length - 1);
+
+	var friendsTruncated = friendsCopy.splice(0, friendsCopy.length - 1);
+
   	var newFriendArray = newFriend.scores;
-  
+
 	friendsTruncated.forEach(function(element, index, array) { 
   		tempMatch = element;
     
@@ -35,7 +38,6 @@ function compareScores(newFriend, friends) {
    	   tempScore = 0;
 
 	});
-
 	return match;
 };
 
@@ -49,9 +51,10 @@ module.exports = function(app){
 		var toNum = stringToNum(newFriend);
 
 		friends.push(toNum);
-		console.log(friends);
 
 		var response = compareScores(toNum, friends);
+		console.log(friends);
+
 		res.json(response);
 	});
 };
