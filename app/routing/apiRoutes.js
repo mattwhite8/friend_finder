@@ -4,7 +4,7 @@ var friends = require('../data/friends.js');
 
 function stringToNum(newFriend) {
 	newFriend.scores.forEach(function(element, index, array) {
-		array[index] = parseInt(index);
+		array[index] = parseInt(element);
 	});
 	return newFriend;
 };
@@ -53,7 +53,6 @@ module.exports = function(app){
 		friends.push(toNum);
 
 		var response = compareScores(toNum, friends);
-		console.log(friends);
 
 		res.json(response);
 	});
