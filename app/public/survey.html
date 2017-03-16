@@ -4,6 +4,7 @@
 	<title>Friend Finder</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Personal CSS -->
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -148,6 +149,7 @@
 		</form>
 
 		<a href="/api/friends">API</a> | <a href="https://github.com/mattwhite8/friend_finder">GitHub Repo</a>
+
 		<!-- Modal -->
 		<div id="resultsModal" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
@@ -172,17 +174,23 @@
 
 	</div>
 	<script type="text/javascript">
+		//On form submit...
 		$("#form-submit").on('click', function(e) {
+			//Prevent default behavior 
 			e.preventDefault();
+			//Create empty array for user answers
 			var answers = [];
 
+			//Loop through each form-group div and pull data from the select child element
 			$(".form-group").each(function() {
 				answers.push($(this).find("select").val());
 			});
 
+			//Make sure user has put in a name and photo link
 			if($("#name").val() === '' || $("#photo").val() === ''){
 				alert('Please enter all required info');
 			}else {
+				//Create object to send to back end
 				var newFriend = {
 					name: $("#name").val().trim(),
 					photo: $("#photo").val().trim(),
@@ -190,13 +198,13 @@
 				}
 			}
 
+			//Post our data to our API route
 			$.post('/api/friends', newFriend)
 			.done(function(data) {
 				console.log(data);
-
+				//Use data sent back from back end to populate our modal and toggle it
 				$("#matchName").text(data.name);
 				$("#matchImg").attr('src', data.photo);
-
 				$("#resultsModal").modal("toggle");
 
 			});

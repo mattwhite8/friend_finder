@@ -1,3 +1,4 @@
+//Starter data for friend_finder
 var friends = [{
 				  name:"Sarah",
 				  photo:"http://i.huffpost.com/gen/1165155/thumbs/o-ICE-POP-570.jpg?1",
@@ -75,4 +76,5 @@ var friends = [{
 				    ]
 				}];
 
+//Export data to API
 module.exports = friends;
