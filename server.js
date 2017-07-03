@@ -1,3 +1,6 @@
+/* eslint-disable no-alert, no-console */
+/*eslint-env node*/
+
 // Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -13,10 +16,10 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //Pulling in routes defined under routing folder
-require('./app/routing/htmlRoutes.js')(app);
-require('./app/routing/apiRoutes.js')(app);
+require("./app/routing/htmlRoutes.js")(app);
+require("./app/routing/apiRoutes.js")(app);
 
 //Static middleware will serve our css file
-app.use(express.static('app'));
+app.use(express.static("app"));
 
 app.listen(PORT);
